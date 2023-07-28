@@ -1,5 +1,22 @@
 # Lab1_computational_skills
 
+# OUTLINE
+
+[Introduction](#Introduction)
+
+[Step 1 - Log into the student research cluster](#Log_into_the_student_research_cluster)
+
+[Step 2 - Navigating the Cluster](#Step_2_-_Navigating_the_Cluster)
+Step 3 - Upload a file to the cluster
+Step 4 - Uncompress the file
+Step 5 - Visualize the file
+Step 6 - Count the number of sequences
+Step 7 - Analyze the base composition of our genome
+Step 8 - Find and extract open-reading frames from our genome
+Step 9 - Edit our slurm script
+Step 10 - Analyze the output file 
+# Command Glossary
+
 # Introduction
 
 Throughout this class, you will sharpen your computational skills. You may come into this course with extensive bioinformatics experience or you may just be starting. I will be providing you with most of the commands you will need to execute. You will, however, need to design and execute some analyses yourself. 
@@ -274,7 +291,7 @@ To see more options in ```grep``` try ```grep --help```
 How many sequences are in our file. 
 
 &nbsp;
-# Step 7 - Analyze the base composition of our genome. 
+# Step 7 - Analyze the base composition of our genome
 
 While there are many useful programs already included in the terminal, there are programs that have been installed on the cluster as **modules**
 
