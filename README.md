@@ -18,7 +18,7 @@
 
 [Step 6 - Count the number of sequences](#step-6---count-the-number-of-sequences)
 
-[**LAB QUESTION 2**](#lq-2)
+**[LAB QUESTION 2](#lq-2)**
 
 [Step 7 - Analyze the base composition of our genome](#step-7---analyze-the-base-composition-of-our-genome)
 
