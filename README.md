@@ -6,16 +6,32 @@
 
 [Step 1 - Log into the student research cluster](#step-1---log-into-the-student-research-cluster)
 
-[Step 2 - Navigating the Cluster](#step_2_navigating_the_cluster)
+[Step 2 - Navigating the Cluster](#step-2---navigating-the-cluster)
 
-Step 3 - Upload a file to the cluster
-Step 4 - Uncompress the file
-Step 5 - Visualize the file
-Step 6 - Count the number of sequences
-Step 7 - Analyze the base composition of our genome
-Step 8 - Find and extract open-reading frames from our genome
-Step 9 - Edit our slurm script
-Step 10 - Analyze the output file 
+[Step 3 - Upload a file to the cluster](#step-3---upload-a-file-to-the-cluster)
+
+[Step 4 - Uncompress the file](#step-4---uncompress-the-file)
+
+[Step 5 - Visualize the file](#step-5---visualize-the-file)
+
+[**LAB QUESTION 1**](#lq-1)
+
+[Step 6 - Count the number of sequences](#step-6---count-the-number-of-sequences)
+
+[**LAB QUESTION 2**](#lq-2)
+
+[Step 7 - Analyze the base composition of our genome](#step-7---analyze-the-base-composition-of-our-genome)
+
+[**LAB QUESTION 3**](#lq-3)
+
+[Step 8 - Find and extract open-reading frames from our genome](#step-8---find-and-extract-open-reading-frames-from-our-genome_
+
+[Step 9 - Edit our slurm script](#step-9---edit-our-slurm-script)
+
+[Step 10 - Run the slurm script!](#step-9---run-the-slurm-script)
+
+[Step 11 - Analyze the output file ](
+
 # Command Glossary
 
 # Introduction
@@ -447,7 +463,7 @@ To quit type ```:q``` and enter
 Check your edits using ```cat``
 
 &nbsp;
-# Step 9 - Run the slurm script!
+# Step 10 - Run the slurm script!
 
 To send your slurm script to the scheduler type
 
@@ -460,9 +476,9 @@ You can see the jobs you have running using the command ```squeue -u username```
 This job may run so quickly it doesn't show up! 
 
 &nbsp;
-# Step 10 - Analyze the output file 
+# Step 11 - Analyze the output file 
 
-
+# LQ 4
 
 
 # Command Glossary       
