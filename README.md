@@ -2,9 +2,9 @@
 
 # OUTLINE
 
-[Introduction](#Introduction)
+[Introduction](#introduction)
 
-[Step 1 - Log into the student research cluster](#Log_into_the_student_research_cluster)
+[Step 1 - Log into the student research cluster](#log_into_the_student_research_cluster)
 
 [Step 2 - Navigating the Cluster](#Step_2_Navigating_the_Cluster)
 Step 3 - Upload a file to the cluster
