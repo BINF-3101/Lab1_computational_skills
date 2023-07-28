@@ -14,7 +14,7 @@
 
 [Step 5 - Visualize the file](#step-5---visualize-the-file)
 
-[**LAB QUESTION 1**](#lq-1)
+**[LAB QUESTION 1](#lq-1)**
 
 [Step 6 - Count the number of sequences](#step-6---count-the-number-of-sequences)
 
@@ -22,7 +22,7 @@
 
 [Step 7 - Analyze the base composition of our genome](#step-7---analyze-the-base-composition-of-our-genome)
 
-[**LAB QUESTION 3**](#lq-3)
+**[LAB QUESTION 3](#lq-3)**
 
 [Step 8 - Find and extract open-reading frames from our genome](#step-8---find-and-extract-open-reading-frames-from-our-genome)
 
@@ -32,7 +32,7 @@
 
 [Step 11 - Analyze the output file ](#step-11---analyze-the-output-file)
 
-[**LAB QUESTION 4**](#lq-4)
+**[LAB QUESTION 4](#lq-4)**
 
 # Command Glossary
 
