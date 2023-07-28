@@ -4,7 +4,7 @@
 
 [Introduction](#introduction)
 
-[Step 1 - Log into the student research cluster](#step_1_log_into_the_student_research_cluster)
+[Step 1 - Log into the student research cluster](#step-1---log-into-the-student-research-cluster)
 
 [Step 2 - Navigating the Cluster](#step_2_navigating_the_cluster)
 
