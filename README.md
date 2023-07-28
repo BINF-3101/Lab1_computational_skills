@@ -26,9 +26,9 @@
 
 [Step 8 - Find and extract open-reading frames from our genome](#step-8---find-and-extract-open-reading-frames-from-our-genome)
 
-[Step 9 - Edit our slurm script](#step-9---edit-our-slurm-script)(#step-9---edit-our-slurm-script)
+[Step 9 - Edit our slurm script](#step-9---edit-our-slurm-script)
 
-[Step 10 - Run the slurm script!](#step-9---run-the-slurm-script)(#step-10---run-the-slurm-script)
+[Step 10 - Run the slurm script!](#step-10---run-the-slurm-script)
 
 [Step 11 - Analyze the output file ](#step-11---analyze-the-output-file)
 
