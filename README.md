@@ -33,7 +33,7 @@ To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId
 
 &nbsp;
 &nbsp;
-# Step 1: Log into the student research cluster
+# Step 1 Log into the student research cluster
 &nbsp;
 ## Using the iMacs or a personal Mac computer
 
