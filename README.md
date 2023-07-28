@@ -4,7 +4,7 @@
 
 [Introduction](#introduction)
 
-[Step 1 - Log into the student research cluster](#step_1_-_log_into_the_student_research_cluster)
+[Step 1 - Log into the student research cluster](#step_1:_log_into_the_student_research_cluster)
 
 [Step 2 - Navigating the Cluster](#Step_2_Navigating_the_Cluster)
 Step 3 - Upload a file to the cluster
@@ -33,7 +33,7 @@ To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId
 
 &nbsp;
 &nbsp;
-# Step 1 - Log into the student research cluster
+# Step 1: Log into the student research cluster
 &nbsp;
 ## Using the iMacs or a personal Mac computer
 
