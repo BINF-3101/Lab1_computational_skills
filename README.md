@@ -69,7 +69,68 @@ Click **Open** and it will launch a terminal window.
 Your username is your email address without the @charlotte.edu portion. 
 
 You will be prompted to enter your username and then your password
-_NOTE_ Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over
+
+_**TIP**_ Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over
+
 Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
 
 You will then be in the cluster! Move on to step 2  
+
+
+&nbsp;
+
+# Step 2 - Navigating the Cluster
+
+You are currently in your home directory. You can return to this directory at any time by using the command ```cd```
+
+To see where you are in the cluster at any time use the command ```pwd``` which stands for Print Working Directory
+
+The cluster has folders and files just like your local computer. 
+
+### Step 2a - Make a Folder
+
+To make a folder or directory you use the command ```mkdir```
+
+Create a folder called ```lab_1``` using the command below
+
+```bash
+mkdir lab_1
+
+```
+
+**_TIP_** **DO NOT** use spaces or other special characters in your folder or file names. Use only letters and numbers. If you want to differentiate words you can use "_" or ".'
+
+
+#### Step 2b - List folders and directories
+
+To list the files or folders/directories in your current location use the ```ls``` command
+
+You can also use the command ```tree``` to view all the files and directories below where you are. 
+
+
+#### Step 2c - Enter your new directory 
+
+To change directories you use the ```cd``` or change directory command. 
+
+We want to enter the directory we just made. To do that execute the command below
+
+```bash
+cd lab_1
+```
+
+Check to make sure you are where you think you are using ```pwd```. 
+
+_**TIP**_ You can autocomplete any file or directory currently accessible by using tab. For example, if you are in your home directory and want to enter the lab_1 directory, you can type ```cd la[tab]``` and it will complete to ```cd lab_1```
+If there is more than one option it will list all of the options, and you will have to type more to complete the process. 
+
+
+# Step 3 - Upload and download a file from the cluster
+
+There are two general ways to upload or download files from your computer to/from the cluster.
+
+First, you can use the command line or a command line tool. You can also use a Graphical User Interface (GUI). There are a number of GUIs you can download and use. I won't be covering them in class but you can install them yourself if it is helpful. 
+
+### Using the iMacs or a personal Mac computer
+
+
+# Command Glossary       
