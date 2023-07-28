@@ -34,7 +34,7 @@ To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId
 
 &nbsp;
 &nbsp;
-# Step 1 Log into the student research cluster
+# Step 1 - Log into the student research cluster
 &nbsp;
 ## Using the iMacs or a personal Mac computer
 
@@ -99,7 +99,7 @@ You will then be in the cluster! Move on to step 2
 &nbsp;
 &nbsp;
 
-# Step 2 Navigating the Cluster
+# Step 2 - Navigating the Cluster
 
 You are currently in your home directory. You can return to this directory at any time by using the command ```cd```
 
