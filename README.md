@@ -641,6 +641,11 @@ less [file_name]
 head -[Num_Lines_to_view] [file_name]
 ```
 &nbsp;
+##### List files in current directory
+```bash
+ls
+```
+&nbsp;
 ##### Search a file for a pattern with grep
 ```bash
 grep [options] "[pattern]" [files]
