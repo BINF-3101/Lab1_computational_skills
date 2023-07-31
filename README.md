@@ -80,7 +80,7 @@ ssh -l username student_hpc.uncc.edu
 
 You will then be prompted to enter your password. Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
 
-_NOTE_ Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over
+**_TIP_** _Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over_
 
 You will then be in the cluster! Move on to step 2  
 
@@ -188,7 +188,7 @@ This will, again, be different between Macs and Windows machines.
 
 &nbsp;
 ### Using the iMacs or a personal Mac computer
-To upload the file from the local computer to the cluster you will use the ```scp`` (secure copy) function. The general format for ```scp``` is 
+To upload the file from the local computer to the cluster you will use the ```scp``` (secure copy) function. The general format for ```scp``` is 
 ```bash
 scp local_file_name user@student_hpc.uncc.edu:directory/in/cluster
 ```
@@ -263,6 +263,8 @@ The ```-xvf``` tells the tar program what to do with the file listed
 ```-f``` = next item is the file
 
 You should now see a file called ```saccharomyces_cerevisiae.fas```
+
+**_HINT_** You can see the options for any command by typing the command and following that with ```--help``` or sometimes ```-h```. For example ```tar --help``` will provide you with a detailed set of options for the command
 
 # Step 5 - Visualize the file
 
@@ -595,5 +597,108 @@ What percent of the ORFs annotated on the contig NC_001138 were annotated on the
 
 
 
-# Command Glossary       
-**_HINT_** You can see the options for any command by typing the command and following that with ```--help``` or sometimes ```-h```. For example ```ls --help``` will provide you with a detailed set of options for the command
+# Command Glossary   
+
+I will place the commands that we use in the lab here for future reference. Commands inside of square brackets ```[]``` are for you to edit. 
+
+##### Log into Cluster on mac
+```bash
+ssh -l [username] student_hpc.uncc.edu
+```
+&nbsp;
+##### Make a directory
+```bash
+mkdir [new_dir_name]
+```
+&nbsp;
+##### Change the working directory
+```bash
+cd [destination_directory]
+```
+&nbsp;
+##### Upload a file on MAC
+```bash
+scp [local_file_name] [user]@student_hpc.uncc.edu:[directory/in/cluster]
+```
+&nbsp;
+##### Upload a file using PSFTP.exe on Windows
+```bash
+put C:[\Users\Directory\On_Desktop\file_name] /users/[alabell3/directory/on_cluster/file_name]
+```
+&nbsp;
+##### Extracting a tar.gz file
+```bash
+tar -xvf [file.tar.gz]
+```
+&nbsp;
+##### Interactive view of the file
+```bash
+less [file_name]
+```
+&nbsp;
+##### Static view of the start of a file
+```bash
+head -[Num_Lines_to_view] [file_name]
+```
+&nbsp;
+##### Search a file for a pattern with grep
+```bash
+grep [options] "[pattern]" [files]
+```
+Options we have covered are:
+```bash
+-A [number_of_lines]       #gets the specified number of lines after a match
+-c                         #returns the number of times the pattern is found
+```
+Read more about grep here: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
+&nbsp;
+##### Search for a module on the cluster
+```bash
+module search [search_term]
+```
+&nbsp;
+##### Load a module to use on the cluster
+```bash
+module load [module_name]
+ml [module name]
+```
+&nbsp;
+##### Copy a file
+```bash
+cp [source_file] [destination_file]
+```
+&nbsp;
+##### Launch nano to edit a file in the command line
+```bash
+nano [file_name]
+```
+You can read more about nano here: https://www.hostinger.com/tutorials/how-to-install-and-use-nano-text-editor#How_to_Use_Nano_Text_Editor
+
+&nbsp;
+##### Use vi to edit a file in the command line
+```bash
+vi [file_name]
+```
+You can read more about vi and get a cheat-sheet here: https://www.redhat.com/sysadmin/introduction-vi-editor
+
+&nbsp;
+##### Submit a slurm script to the scheduler
+```bash
+sbatch [instructions].slurm
+```
+&nbsp;
+##### See your currently running jobs on the slurm scheduler
+```bash
+squeue -u [username]
+```
+
+&nbsp;
+##### Convert a multi-line fasta file into a one-line fasta file
+```bash
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < [INPUT_FILE].fasta > [OUTPUT_FILE].fasta
+```
+&nbsp;
+##### Redirect output to save to a new file
+```bash
+[commands] > [output_file]
+```
