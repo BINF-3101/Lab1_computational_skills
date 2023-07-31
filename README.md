@@ -34,8 +34,14 @@
 
 **[LAB QUESTION 4](#lq-4)**
 
-# Command Glossary
+[Step 12 - Extract data for one genomic contig ](#step-12---extract-data-for-one-genomic-contig)
 
+**[LAB QUESTION 5](#lq-5)**
+
+[Command Glossary](#command-glossary)
+
+&nbsp;
+&nbsp;
 # Introduction
 
 Throughout this class, you will sharpen your computational skills. You may come into this course with extensive bioinformatics experience or you may just be starting. I will be providing you with most of the commands you will need to execute. You will, however, need to design and execute some analyses yourself. 
@@ -107,7 +113,7 @@ Your username is your email address without the @charlotte.edu portion.
 
 You will be prompted to enter your username and then your password
 
-_**TIP**_ Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over
+_**TIP**_ _Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over_
 
 Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
 
@@ -136,7 +142,7 @@ mkdir lab_1
 
 ```
 
-**_TIP_** **DO NOT** use spaces or other special characters in your folder or file names. Use only letters and numbers. If you want to differentiate words you can use "_" or ".'
+**_TIP_** _**DO NOT** use spaces or other special characters in your folder or file names. Use only letters and numbers. If you want to differentiate words you can use_ ```_``` _or_ ```.```
 
 &nbsp;
 ### Step 2b - List folders and directories
@@ -158,8 +164,8 @@ cd lab_1
 
 Check to make sure you are where you think you are using ```pwd```. 
 
-_**TIP**_ You can autocomplete any file or directory currently accessible by using tab. For example, if you are in your home directory and want to enter the lab_1 directory, you can type ```cd la[tab]``` and it will complete to ```cd lab_1```
-If there is more than one option it will list all of the options, and you will have to type more to complete the process. 
+_**TIP**_ _You can autocomplete any file or directory currently accessible by using tab. For example, if you are in your home directory and want to enter the lab_1 directory, you can type_ ```cd la[tab]``` _and it will complete to_ ```cd lab_1```
+_If there is more than one option it will list all of the options, and you will have to type more to complete the process._
 
 &nbsp;
 &nbsp;
@@ -327,9 +333,9 @@ module search EMBOSS
 
 We can see that EMBOSS version 6.6.0 is installed on the cluster
 
-**_TIP_** Case (upper vs lower) matters when loading modules. You will need to type it exactly as written before the : in the description. 
+**_TIP_** _Case (upper vs lower) matters when loading modules. You will need to type it exactly as written before the : in the description._
 
-**_TIP_** Placing a ```#``` before any line of code means it's a comment and not a command. I will often put notes in the code using # that will be ignored. 
+**_TIP_** _Placing a_ ```#``` _before any line of code means it's a comment and not a command. I will often put notes in the code using # that will be ignored._
 
 To load emboss we can now type
 
@@ -366,9 +372,8 @@ First, you will need to copy the slurm script from the class folder into your di
 cp FILLIN/emboss_cerevisiae.slurm .
 ```
 
-**_TIP_** The ```.``` in the above command means "here". It will copy the file to the current directory without changing the name of the file. If you wanted to give the file a new name you could use ```cp FILLIN/emboss_cerevisiae.slurm new_name.slurm``` 
-
-You could also copy the file to a different directory such as ```cp FILLIN/emboss_cerevisiae.slurm ~/lab2/.```
+**_TIP_** _The_ ```.``` _in the above command means "here". It will copy the file to the current directory without changing the name of the file. If you wanted to give the file a new name you could use_ ```cp FILLIN/emboss_cerevisiae.slurm new_name.slurm``
+_You could also copy the file to a different directory such as_ ```cp FILLIN/emboss_cerevisiae.slurm ~/lab2/.```
 
 ### Step 8b - View the slurm script
 
@@ -469,6 +474,8 @@ Check your edits using ```cat``
 
 To send your slurm script to the scheduler type
 
+**_TIP_** _Your slurm script will execute all the commands as though it is in the directory where you have the slurm script. If the script needs to access files in another directory you will need to specify the directory_
+
 ```bash
 sbatch emboss_cerevisiae.slurm
 ```
@@ -480,7 +487,112 @@ This job may run so quickly it doesn't show up!
 &nbsp;
 # Step 11 - Analyze the output file 
 
+Once the job is done running, you will see your output file appear in your directory. Next, we will analyze our file. 
+
+First, take a look at the file using ```less``` or ```head```. 
+
+You should see protein sequences in fasta format with a header like this:
+
+```>NC_001141_3935 [328076 - 327954] (REVERSE SENSE) ```
+
+```NC_001141_3935``` - This is the sequence identifier. The first part ```NC_001141``` is the genome sequence in which the open reading frame was found. ```3935``` is the identifier for this coding sequence. It's the 3,935th coding sequence identified on this contig (genome sequence). 
+
+```[328076 - 327954]``` - Is the position along the contig (genome sequence) where the ORF was found. 
+
+```(REVERSE SENSE)``` - This identifier is only present in ORF frames that were found when reading in reverse-complement (complimentary sequence going from right-to-left) along the DNA sequence. 
+
+Use commands such as ```grep``` to answer the questions below. Remember, you can look at the options for grep using ```grep --help```
+
 # LQ 4
+How many ORFs were annotated in the _Saccharomyces cerevisiae_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _S. cerevisiae_
+
+&nbsp;
+# Step 12 - Extract data for one genomic contig
+
+We are particularly interested in the contig **NC_001138** 
+
+Let's extract all the ORFs belonging to this contig. There are ways using biopython, bioperl or other programs to load in and analyze a fasta file. We will, however, do this manually using bash. 
+
+### Step 12a - Making our file a one-line fasta file
+
+If we look into our fasta file we will see a snippet like this:
+
+```bash
+>NC_001133_345 [51419 - 51538]
+FRKTIIGRCSWSELGLQQWFTSGSFGGWWFKRANANSRDE
+>NC_001133_346 [48561 - 51704]
+VMVENSTQKAPHAGNDDNSSTKPYSEAFFLGFNNPTPGLEAEHSSTSPAPENSETHNRKR
+NRILFVCQACRKSKTKCDREKPECGRCVKHGLKCVYDVSKQPAPRIPSKDAIISRLEKDM
+FYWKDKAMKLLTEREVNESGKRSASPINTNNASGDSPDTKKQHKMEPIYEQSGNGDINNG
+TRNDIEINLYRSHPTMIMSKVMKREVKPLSENYIIIQDCFLKILVTSVFLDTSKNTMIPA
+LTANANITRAQPSVANNLLKLKEMLIRQCQTEDEKNRVNEFTDRILQNTNSNRNLKIGML
+LSMLYNSVGYQYLEDHCPQGGEYSDLLRNLINECEAILPSYEIIERYKNHFYEYVYPSLP
+FIELEIFEESLSQTIFPDPNNPSKVQIRMGSTHLRAKVENLSLLLVILKLSYMSIRFLDH
+STADSSFYLSKEIIDKYPIPNDFILLSQRCLASENWCACANENIISCLLYIWSFFAFSPE
+EGDFFLEHPTDVISSLIMMLSTSIGLHRDPSDFPQLISPSTSDKRTLNHRRILWLSIVTV
+CSFEASLKGRHSVSPISLMALFLNIKDPDSLTVYMNRVRGDLSDINNHKLLRIHKFTFKR
+AQLALLLSDLDNLTMTYYGSFHLHSIEFIREKIEIFVEENFPIVPLKSVAQDKSDLDDMN
+VISEMNILSSENSSSFHNRIMNKLLMLRTSMAVFLHFETLITKDKSIFPFYKKYFMVSCM
+DALSLINYFNKFFNGEYRHAISSLTSFNVTKFIQLALSSTIFSLLGIILRIGLAIHMLSS
+EVQKLSGTTDPRIKELNTKVEKFSTLQRDLESALEGIYCSASEHLRFTYFPVFKMLALFD
+VIVQRMRKGELWHGIFTMIQMEQMHSRIIKTLSITLGVKLDKKDRLLEELMACNHVANFS
+VEDIDELNRNIKKEIQISSGLKPPVNTIDLTNGEPFGNAVPTFTKTWSSSLDNLEKLSSA
+AAVGQSLDYNSGLRQGPLAGGGSKEQTPIAGMNNLNNSINATPIVDNSSGSQLPNGFDRG
+QANNTPFPGYFGGLDLFDYDFLFGNDFA
+>NC_001133_347 [51547 - 51747]
+TIQSMLHQLSITHLDHNFLMVSIEAKRIILLFQVILEVWIYLIMTFCLAMTLLKNFLSKL
+LPIHFIN
+>NC_001133_348 [51751 - 51855]
+LILYSHEFMKLTDNIKCSIYIYMYITVNVRRALPS
+```
+What we can see is that each **line is limited to 60 characters**. We want to re-format our file so it keeps the entire protein sequence on one line. 
+
+To do this we can use this command (we will dive deeper into the powerful ```awk``` command later)
+
+```bash
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < INPUT_FILE.fasta > OUTPUT_FILE.fasta
+```
+Replace the INPUT and OUTPUT file names and execute the command
+
+Now our output file should look more like this:
+
+```bash
+>NC_001133_345 [51419 - 51538]
+FRKTIIGRCSWSELGLQQWFTSGSFGGWWFKRANANSRDE
+>NC_001133_346 [48561 - 51704]
+VMVENSTQKAPHAGNDDNSSTKPYSEAFFLGFNNPTPGLEAEHSSTSPAPENSETHNRKRNRILFVCQACRKSKTKCDREKPECGRCVKHGLKCVYDVSKQPAPRIPSKDAIISRLEKDMFYWKDKAMKLLTEREVNESGKRSASPINTNNASGDSPDTKKQHKMEPIYEQSGNGDINNGTRNDIEINLYRSHPTMIMSKVMKREVKPLSENYIIIQDCFLKILVTSVFLDTSKNTMIPALTANANITRAQPSVANNLLKLKEMLIRQCQTEDEKNRVNEFTDRILQNTNSNRNLKIGMLLSMLYNSVGYQYLEDHCPQGGEYSDLLRNLINECEAILPSYEIIERYKNHFYEYVYPSLPFIELEIFEESLSQTIFPDPNNPSKVQIRMGSTHLRAKVENLSLLLVILKLSYMSIRFLDHSTADSSFYLSKEIIDKYPIPNDFILLSQRCLASENWCACANENIISCLLYIWSFFAFSPEEGDFFLEHPTDVISSLIMMLSTSIGLHRDPSDFPQLISPSTSDKRTLNHRRILWLSIVTVCSFEASLKGRHSVSPISLMALFLNIKDPDSLTVYMNRVRGDLSDINNHKLLRIHKFTFKRAQLALLLSDLDNLTMTYYGSFHLHSIEFIREKIEIFVEENFPIVPLKSVAQDKSDLDDMNVISEMNILSSENSSSFHNRIMNKLLMLRTSMAVFLHFETLITKDKSIFPFYKKYFMVSCMDALSLINYFNKFFNGEYRHAISSLTSFNVTKFIQLALSSTIFSLLGIILRIGLAIHMLSSEVQKLSGTTDPRIKELNTKVEKFSTLQRDLESALEGIYCSASEHLRFTYFPVFKMLALFDVIVQRMRKGELWHGIFTMIQMEQMHSRIIKTLSITLGVKLDKKDRLLEELMACNHVANFSVEDIDELNRNIKKEIQISSGLKPPVNTIDLTNGEPFGNAVPTFTKTWSSSLDNLEKLSSAAAVGQSLDYNSGLRQGPLAGGGSKEQTPIAGMNNLNNSINATPIVDNSSGSQLPNGFDRGQANNTPFPGYFGGLDLFDYDFLFGNDFA
+>NC_001133_347 [51547 - 51747]
+TIQSMLHQLSITHLDHNFLMVSIEAKRIILLFQVILEVWIYLIMTFCLAMTLLKNFLSKLLPIHFIN
+>NC_001133_348 [51751 - 51855]
+LILYSHEFMKLTDNIKCSIYIYMYITVNVRRALPS
+```
+
+### Step 12b - Extracting the sequences for NC_001138
+
+Now we will extract all the sequences that contain the identifier "NC_001138" and save them to a new file
+
+```bash
+grep -A 1 "NC_001138" one_line_fasta_file.fasta > NC_001138.fasta
+```
+Here is a breakdown of the command
+
+```-A 1``` - This invokes the ``-A`` option which is also known as ``--after-context=NUM   print NUM lines of trailing context``. In this case, we want to obtain any sequence matching our search (which will be the header line starting with >) AND the sequence data saved directly after it. 
+
+``` ""NC_001138"``` - This is the pattern we are searching for
+
+```one_line_fasta_file.fasta``` - This is the file we are searching in
+
+If we were to stop the command at ```grep -A 1 "NC_001138" one_line_fasta_file.fasta``` it would print the results directly onto the terminal. We want to **direct the output to a new file**. To do this we need to use the command ```>```. 
+
+```> NC_001138.fasta``` - This directs the output of the command to be saved in a new file. **_BEWARE_** This will **automatically overwrite** any file that already has our output name. If this happens **you will not be able to undo this**
+
+
+
+**_TIP_** _Options in programs typically have a short version that is one letter long and a long version that may be multiple characters long. For the option above for obtaining 1 line after your search, you can either use_ ```-A 1``` _or you can use the long version_ ```--after-context=1```. _Options are almost always case-sensitive. The_ ```-A``` _command means after-context while_ ```-a``` _is used while searching binary/compressed files_
+
+# LQ 5
+What percent of the ORFs annotated on the contig NC_001138 were annotated on the REVERSE strand? 
+
 
 
 # Command Glossary       
