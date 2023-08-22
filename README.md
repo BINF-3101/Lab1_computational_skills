@@ -75,7 +75,7 @@ Navigate to the Utilities folder within applications and double-click on the **T
 Once the terminal is open you will log into the cluster using the command below. Your username is your email address without the @charlotte.edu portion. 
 
 ```bash
-ssh -l username student_hpc.uncc.edu
+ssh -l username hpc-student.uncc.edu
 ```
 
 You will then be prompted to enter your password. Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
@@ -98,7 +98,7 @@ Go to the website and install putty
 &nbsp;
 ### Windows Step 1b - Open PuTTY & enter the information
 
-You will enter ```student_hpc.uncc.edu``` into the Host Name
+You will enter ```hpc-student.uncc.edu``` into the Host Name
 Make sure the ```Port``` is set to 22
 Select ```SSH``` as the connection type
 
@@ -190,13 +190,13 @@ This will, again, be different between Macs and Windows machines.
 ### Using the iMacs or a personal Mac computer
 To upload the file from the local computer to the cluster you will use the ```scp``` (secure copy) function. The general format for ```scp``` is 
 ```bash
-scp local_file_name user@student_hpc.uncc.edu:directory/in/cluster
+scp local_file_name username@hpc-student.uncc.edu:users/username
 ```
 
 So for me to upload our file from the computer lab computer I would use
 
 ```bash
-FILL IN LATER
+scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:users/alabell3/
 ```
 
 &nbsp;
@@ -215,11 +215,11 @@ This will launch a new terminal
 
 #### Win step 3 - log into the cluster
 
-To log into the cluster type ```open username@student_hpc.uncc.edu```
+To log into the cluster type ```open username@hpc-student.uncc.edu```
 
 You will then be prompted for your password and DUO authentication. 
 
-#### Win step 4 - Upload our file 
+#### Windows step 4 - Upload our file 
 
 You will automatically be placed in your home directory (you will see ```Remote directory is now /FILLIN/username```
 You can use the ```cd``` command to move around the remote directories on the cluster
@@ -603,7 +603,7 @@ I will place the commands that we use in the lab here for future reference. Comm
 
 ##### Log into Cluster on mac
 ```bash
-ssh -l [username] student_hpc.uncc.edu
+ssh -l [username] hpc-student.uncc.edu
 ```
 &nbsp;
 ##### Make a directory
@@ -618,7 +618,7 @@ cd [destination_directory]
 &nbsp;
 ##### Upload a file on MAC
 ```bash
-scp [local_file_name] [user]@student_hpc.uncc.edu:[directory/in/cluster]
+scp [local_file_name] [user]@ hpc-student.uncc.edu:[directory/in/cluster]
 ```
 &nbsp;
 ##### Upload a file using PSFTP.exe on Windows
