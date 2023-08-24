@@ -255,9 +255,14 @@ You will need to locate the file on your computer. To access the files on your c
 Once you have located your file you can use the scp command to copy the file to the cluster
 
 ```bash
-scp -P 22 /mnt/c/Users/locallaptopname/Downloads/saccharomyces_cerevisiae.fas.tar.gz unccUsername@hpc-student.uncc.edu:users/unccUsername/
+scp -P 22 /mnt/c/Users/locallaptopname/Downloads/saccharomyces_cerevisiae.fas.tar.gz unccUsername@hpc-student.uncc.edu:lab_1/saccharomyces_cerevisiae.fas.tar.gz
+```
 
+If you get this error: ```ssh: Could not resolve hostname C: Temporary failure in name resolution``` you will need to follow these instructions:
 
+1. Open the Control Panel and select Programs -> **Turn Windows features on or off**.
+2. Tick on the checkbox of Windows Subsystem for Linux to enable this feature.
+3.  Reboot your Windows PC for this change to take effect
 
 # Step 4 - Uncompress the file
 
