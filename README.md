@@ -250,7 +250,7 @@ You can then return to your putty terminal and your file will be in the folder y
 
 ### Using a Windows computer and Ubuntu
 
-You will need to locate the file on your computer. To access the files on your computer you will need to get out of Ubuntu (and back into your computer) in the ```/mnt/c/``` directory. In the ```/mnt/c/``` directory you should see all your local files  
+You will need to locate the file on your computer. To access the files on your computer you will need to get out of Ubuntu (and back into your computer) in the ```/mnt/c/ ``` directory. In the ```/mnt/c/ ``` directory you should see all your local files  
 
 Once you have located your file you can use the scp command to copy the file to the cluster
 
