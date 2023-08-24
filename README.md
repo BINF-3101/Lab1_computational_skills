@@ -192,9 +192,16 @@ This will, again, be different between Macs and Windows machines.
 
 &nbsp;
 ### Using the iMacs or a personal Mac computer
+
+The easiest thing is to open a second window of the terminal using Shell > New Window
+
+Because you are not logged into the cluster you will then be in your local computer. 
+
+Find the directory of the file you want to upload or copy the file to the current directory which you can see using ```pwd```
+
 To upload the file from the local computer to the cluster you will use the ```scp``` (secure copy) function. The general format for ```scp``` is 
 ```bash
-scp local_file_name username@hpc-student.uncc.edu:Users/username
+scp local_file_name username@hpc-student.uncc.edu:lab_1/file_name
 ```
 
 So for me to upload our file from the computer lab computer (if the file is saved on the desktop) I would use
