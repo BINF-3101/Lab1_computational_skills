@@ -190,13 +190,13 @@ This will, again, be different between Macs and Windows machines.
 ### Using the iMacs or a personal Mac computer
 To upload the file from the local computer to the cluster you will use the ```scp``` (secure copy) function. The general format for ```scp``` is 
 ```bash
-scp local_file_name username@hpc-student.uncc.edu:users/username
+scp local_file_name username@hpc-student.uncc.edu:Users/username
 ```
 
 So for me to upload our file from the computer lab computer I would use
 
 ```bash
-scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:users/alabell3/
+scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:Users/alabell3/
 ```
 
 &nbsp;
