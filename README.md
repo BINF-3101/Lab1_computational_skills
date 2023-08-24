@@ -197,10 +197,10 @@ To upload the file from the local computer to the cluster you will use the ```sc
 scp local_file_name username@hpc-student.uncc.edu:Users/username
 ```
 
-So for me to upload our file from the computer lab computer I would use
+So for me to upload our file from the computer lab computer (if the file is saved on the desktop) I would use
 
 ```bash
-scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:users/alabell3/
+scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:lab_1/saccharomyces_cerevisiae.fas.tar.gz
 ```
 
 &nbsp;
@@ -239,7 +239,7 @@ The general format for uploading is ```put local_file destination_file```
 So if I wanted to upload from my local desktop to the lab_1 folder in my directory I would execute the command below
 
 ```bash
-put C:\Users\alabell3\Desktop\saccharomyces_cerevisiae.fas.tar.gz /users/alabell3/lab_1/saccharomyces_cerevisiae.fas.tar.gz
+put C:\Users\alabell3\Desktop\saccharomyces_cerevisiae.fas.tar.gz lab_1/saccharomyces_cerevisiae.fas.tar.gz
 ```
 
 You can then return to your putty terminal and your file will be in the folder you designated! 
