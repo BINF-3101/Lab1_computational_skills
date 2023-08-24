@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#SBATCH --partition=Orion
+
 #SBATCH --job-name=emboss_sacch
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
