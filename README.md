@@ -90,6 +90,10 @@ You will then be in the cluster! Move on to step 2
 
 Unfortunately, windows computers do not come with a built-in Linux terminal to access the cluster. You will need to download one 
 &nbsp;
+
+There is also an option to use **Ubuntu** on Windows - to log in use the Mac instructions above
+
+&nbsp;
 ### Windows Step 1a - Obtain SSH Client
 
 There are numerous SSH clients to choose from, but I suggest using the tried and true PuTTY https://www.chiark.greenend.org.uk/~sgtatham/putty/
@@ -196,7 +200,7 @@ scp local_file_name username@hpc-student.uncc.edu:Users/username
 So for me to upload our file from the computer lab computer I would use
 
 ```bash
-scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:Users/alabell3/
+scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:users/alabell3/
 ```
 
 &nbsp;
@@ -242,6 +246,19 @@ You can then return to your putty terminal and your file will be in the folder y
 
 &nbsp;
 &nbsp;
+
+
+### Using a Windows computer and Ubuntu
+
+You will need to locate the file on your computer. To access the files on your computer you will need to get out of Ubuntu (and back into your computer) in the ```/mnt/c/``` directory. In the ```/mnt/c/``` directory you should see all your local files  
+
+Once you have located your file you can use the scp command to copy the file to the cluster
+
+```bash
+scp -P 22 /mnt/c/Users/locallaptopname/Downloads/saccharomyces_cerevisiae.fas.tar.gz unccUsername@hpc-student.uncc.edu:users/unccUsername/
+
+
+
 # Step 4 - Uncompress the file
 
 Sequence files can become quite larger. There are numerous ways to compress a file using methods like tar, gzip, and zip. The file we are working with has been compressed using the tar command. 
