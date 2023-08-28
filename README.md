@@ -61,8 +61,9 @@ To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId
 # Step 1 - Log into the student research cluster
 &nbsp;
 ## Using the iMacs or a personal Mac computer
-
-To log into the cluster using a Mac you will use the SSH Client. 
+You can watch our TA Theo demonstrate the commands below:
+flag
+To log into the cluster using a Mac you will use the SSH Client.
 &nbsp;
 ### Mac Step 1a - Open SSH Client
 
@@ -72,10 +73,15 @@ Navigate to the Utilities folder within applications and double-click on the **T
 &nbsp;
 ### Mac Step 1b - Log into cluster
 
-Once the terminal is open you will log into the cluster using the command below. Your username is your email address without the @charlotte.edu portion. 
+Once the terminal is open you will log into the cluster using the command below. Your username is your email address without the @charlotte.edu portion. Type the following command then hit enter.
 
 ```bash
-ssh -l username hpc-student.uncc.edu
+ssh username@hpc-student.uncc.edu
+```
+ex.
+
+```bash
+ssh jdoe@hpc-student.uncc.edu
 ```
 
 You will then be prompted to enter your password. Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
@@ -92,7 +98,7 @@ Unfortunately, windows computers do not come with a built-in Linux terminal to a
 &nbsp;
 
 If you are using windows you can watch our TA Theo set up the terminal in the video uploaded here
-
+flag
 There is also an option to use **Ubuntu** on Windows - to log in use the Mac instructions above
 
 &nbsp;
@@ -235,7 +241,7 @@ You will then be prompted for your password and DUO authentication.
 #### Windows step 4 - Upload our file 
 
 You will automatically be placed in your home directory (you will see ```Remote directory is now /FILLIN/username```
-You can use the ```cd``` command to move around the remote directories on the cluster
+You can use the ```cd``` command to move around the remote directories on the cluster. ```cd``` into your lab_1 folder now.
 
 To visualize where you are on your own computer use the ```!dir``` command. psftp will automatically go to the folder in which you have saved the .exe file. I suggest you put the .exe file and any files you want to upload on your desktop
 
@@ -248,7 +254,7 @@ The general format for uploading is ```put local_file destination_file```
 So if I wanted to upload from my local desktop to the lab_1 folder in my directory I would execute the command below
 
 ```bash
-put C:\Users\alabell3\Desktop\saccharomyces_cerevisiae.fas.tar.gz lab_1/saccharomyces_cerevisiae.fas.tar.gz
+put C:\Users\alabell3\Desktop\saccharomyces_cerevisiae.fas.tar.gz saccharomyces_cerevisiae.fas.tar.gz
 ```
 
 You can then return to your putty terminal and your file will be in the folder you designated! 
@@ -264,7 +270,12 @@ You will need to locate the file on your computer. To access the files on your c
 Once you have located your file you can use the scp command to copy the file to the cluster
 
 ```bash
-scp -P 22 /mnt/c/Users/locallaptopname/Downloads/saccharomyces_cerevisiae.fas.tar.gz unccUsername@hpc-student.uncc.edu:lab_1/saccharomyces_cerevisiae.fas.tar.gz
+scp local_file_path destination_file_path
+```
+example:
+
+```bash
+scp /mnt/c/Users/locallaptopname/Downloads/saccharomyces_cerevisiae.fas.tar.gz unccUsername@hpc-student.uncc.edu:lab_1/saccharomyces_cerevisiae.fas.tar.gz
 ```
 
 If you get this error: ```ssh: Could not resolve hostname C: Temporary failure in name resolution``` you will need to follow these instructions:
