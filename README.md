@@ -62,7 +62,7 @@ To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId
 &nbsp;
 ## Using the iMacs or a personal Mac computer
 You can watch our TA Theo demonstrate the commands below:
-flag
+
 To log into the cluster using a Mac you will use the SSH Client.
 &nbsp;
 ### Mac Step 1a - Open SSH Client
