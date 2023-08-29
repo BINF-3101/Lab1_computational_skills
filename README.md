@@ -97,8 +97,8 @@ You will then be in the cluster! Move on to step 2
 Unfortunately, windows computers do not come with a built-in Linux terminal to access the cluster. You will need to download one 
 &nbsp;
 
-If you are using windows you can watch our TA Theo set up the terminal in the video uploaded here
-flag
+If you are using windows you can watch our TA Theo set up the terminal in the video uploaded **on canvas**
+
 There is also an option to use **Ubuntu** on Windows - to log in use the Mac instructions above
 
 &nbsp;
