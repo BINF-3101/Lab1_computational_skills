@@ -451,6 +451,13 @@ As you can see there are place-holder files INPUT and OUTPUT that we will need t
 
 # Step 9 - Edit our slurm script
 
+In addition to the edits listed below, you **must add this line at the top of the file**
+
+```#SBATCH --partition=Centaurus```
+
+![image](https://github.com/BINF-3101/Lab1_computational_skills/assets/47755288/55e3bd1c-d7e1-47b6-959e-d45a43f06895)
+
+
 There are many ways we can edit a file on the cluster. The most common ways are 
 1. upload/download
 2. nano
