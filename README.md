@@ -413,11 +413,13 @@ We will run this command by submitting a **slurm script** to the scheduler.
 ### Step 8a - Copy the slurm script
 First, you will need to copy the slurm script from the class folder into your directory. To do this execute the following command
 ```bash
-cp FILLIN/emboss_cerevisiae.slurm .
+cp /projects/class/binf3101_001/emboss_cerevisiae.slurm .
 ```
 
+You can also download the slurm script from canvas and upload it. 
+
 **_TIP_** _The_ ```.``` _in the above command means "here". It will copy the file to the current directory without changing the name of the file. If you wanted to give the file a new name you could use_ ```cp FILLIN/emboss_cerevisiae.slurm new_name.slurm``
-_You could also copy the file to a different directory such as_ ```cp FILLIN/emboss_cerevisiae.slurm ~/lab2/.```
+_You could also copy the file to a different directory such as_ ```cp /projects/class/binf3101_001/emboss_cerevisiae.slurm ~/lab2/.```
 
 ### Step 8b - View the slurm script
 
