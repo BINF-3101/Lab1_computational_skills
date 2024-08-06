@@ -54,14 +54,19 @@ You have the choice to use the provided iMacs or your personal computer. You wil
 
 You will need your **DUO authentication method** and if you want to log in off-campus you will need to connect to the University via the **VPN**
 
+
+**YOU  MUST HAVE THE VPN CONNECTED TO LOG IN OFF CAMPUS!!!**
+
 To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId=6653379
 
 &nbsp;
 &nbsp;
 # Step 1 - Log into the student research cluster
+
+If you have trouble please watch the video tutorials posted on Canvas. 
+
 &nbsp;
 ## Using the iMacs or a personal Mac computer
-You can watch our TA Theo demonstrate the commands below:
 
 To log into the cluster using a Mac you will use the SSH Client.
 &nbsp;
@@ -94,10 +99,8 @@ You will then be in the cluster! Move on to step 2
 &nbsp;
 ## Using a Windows computer
 
-Unfortunately, windows computers do not come with a built-in Linux terminal to access the cluster. You will need to download one 
+Unfortunately, windows computers do not have a built-in Linux terminal to access the cluster. You will need to download one 
 &nbsp;
-
-If you are using windows you can watch our TA Theo set up the terminal in the video uploaded **on canvas**
 
 There is also an option to use **Ubuntu** on Windows - to log in use the Mac instructions above
 
