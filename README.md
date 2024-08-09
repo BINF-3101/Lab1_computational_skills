@@ -174,6 +174,13 @@ To list the files or folders/directories in your current location use the ```ls`
 
 You can also use the command ```tree``` to view all the files and directories below where you are. 
 
+```bash
+#to list the files in the current directory
+ls
+#to see a tree of the files
+tree
+```
+
 &nbsp;
 ### Step 2c - Enter your new directory 
 
@@ -202,7 +209,7 @@ First, you can use the command line or a command line tool. You can also use a G
 &nbsp;
 ### Step 3a - Download the file to your local computer
 
-Download the file named ```saccharomyces_cerevisiae.fas.tar.gz``` from the github page onto your local computer. 
+Download the file named ```candida_albicans.fas.tar.gz``` from the github page onto your local computer. 
 
 &nbsp;
 ### Step 3b - Upload the file to the cluster
@@ -226,7 +233,7 @@ scp local_file_name username@hpc-student.uncc.edu:lab_1/file_name
 So for me to upload our file from the computer lab computer (if the file is saved on the desktop) I would use
 
 ```bash
-scp saccharomyces_cerevisiae.fas.tar.gz alabell3@hpc-student.uncc.edu:lab_1/saccharomyces_cerevisiae.fas.tar.gz
+scp candida_albicans.fas.tar.gz alabell3@hpc-student.uncc.edu:lab_1/candida_albicans.fas.tar.gz
 ```
 
 &nbsp;
@@ -265,7 +272,7 @@ The general format for uploading is ```put local_file destination_file```
 So if I wanted to upload from my local desktop to the lab_1 folder in my directory I would execute the command below
 
 ```bash
-put C:\Users\alabell3\Desktop\saccharomyces_cerevisiae.fas.tar.gz saccharomyces_cerevisiae.fas.tar.gz
+put C:\Users\alabell3\Desktop\candida_albicans.fas.tar.gz candida_albicans.fas.tar.gz
 ```
 
 You can then return to your putty terminal and your file will be in the folder you designated! 
@@ -286,7 +293,7 @@ scp local_file_path destination_file_path
 example:
 
 ```bash
-scp /mnt/c/Users/locallaptopname/Downloads/saccharomyces_cerevisiae.fas.tar.gz unccUsername@hpc-student.uncc.edu:lab_1/saccharomyces_cerevisiae.fas.tar.gz
+scp /mnt/c/Users/locallaptopname/Downloads/candida_albicans.fas.tar.gz Username@hpc-student.uncc.edu:lab_1/candida_albicans.fas.tar.gz
 ```
 
 If you get this error: ```ssh: Could not resolve hostname C: Temporary failure in name resolution``` you will need to follow these instructions:
@@ -304,7 +311,7 @@ If you were to use the command ```cat``` or ```head``` to look at our file right
 
 To uncompress our file use the command
 ```bash
-tar -xvf saccharomyces_cerevisiae.fas.tar.gz
+tar -xvf candida_albicans.fas.tar.gz
 ```
 
 The ```-xvf``` tells the tar program what to do with the file listed
@@ -315,13 +322,13 @@ The ```-xvf``` tells the tar program what to do with the file listed
 
 ```-f``` = next item is the file
 
-You should now see a file called ```saccharomyces_cerevisiae.fas```
+You should now see a file called ```candida_albicans.fas```
 
 **_HINT_** You can see the options for any command by typing the command and following that with ```--help``` or sometimes ```-h```. For example ```tar --help``` will provide you with a detailed set of options for the command
 
 # Step 5 - Visualize the file
 
-This is a LARGE file. It is the whole genome of the yeast species _Saccharomyces cerevisiae_. It is in what is called FASTA format. Our file contains **nucleotide** data but FASTA files can contain amino acid or nucleotide data. The general format for FASTA format is:
+This is a LARGE file. It is the whole genome of the yeast species _Saccharomyces candida_albicans_. It is in what is called FASTA format. Our file contains **nucleotide** data but FASTA files can contain amino acid or nucleotide data. The general format for FASTA format is:
 ```
 >sequence identifier 1
 sequence data
@@ -332,7 +339,7 @@ sequence data
 Let's take a look at our file using the ```less``` command.
 
 ```bash
-less saccharomyces_cerevisiae.fas
+less candida_albicans.fas
 ```
 
 This will display the file in your terminal. You can press enter to see more of the file. To quit this view hit the ```q``` key
@@ -341,10 +348,10 @@ This will display the file in your terminal. You can press enter to see more of 
 Now let's take a look at our file using the ```head``` command. This command will print into your terminal the first set of lines in the file. You can also specify how many lines you would like it to display. Let's look at the first 5 lines. 
 
 ```bash
-head -5 saccharomyces_cerevisiae.fas
+head -5 candida_albicans.fas
 ```
 # LQ 1
-What is the sequence identifier of the first sequence in the saccharomyces_cerevisiae.fas file
+What is the sequence identifier of the first sequence in the candida_albicans.fas file
 
 
 # Step 6 - Count the number of sequences
@@ -357,12 +364,12 @@ If we want to count how many sequences there are in our file, we can simply coun
 
 Try out grep using this command:
 ```bash
-grep ">" saccharomyces_cerevisiae.fas
+grep ">" candida_albicans.fas
 ```
 
 One of the options in ```grep``` is to count the number of instances instead of returning them. This is the ```-c``` option. 
 ```bash
-grep -c ">" saccharomyces_cerevisiae.fas
+grep -c ">" candida_albicans.fas
 ```
 
 To see more options in ```grep``` try ```grep --help```
@@ -404,7 +411,7 @@ Within emboss we want to run the ```geecee```. As you can see from the name, it 
 To run geecee on our sequences use the command below where we provide an informative output file name for the results to be saved
 
 ```bash
-geecee -sequence saccharomyces_cerevisiae.fas -outfile saccharomyces_cerevisiae.geecee.out
+geecee -sequence candida_albicans.fas -outfile candida_albicans.geecee.out
 ```
 
 
@@ -424,13 +431,13 @@ We will run this command by submitting a **slurm script** to the scheduler.
 ### Step 8a - Copy the slurm script
 First, you will need to copy the slurm script from the class folder into your directory. To do this execute the following command
 ```bash
-cp /projects/class/binf3101_001/emboss_cerevisiae.slurm .
+cp /projects/class/binf3101_001/emboss_candida_albicans.slurm .
 ```
 
 You can also download the slurm script from canvas and upload it. 
 
-**_TIP_** _The_ ```.``` _in the above command means "here". It will copy the file to the current directory without changing the name of the file. If you wanted to give the file a new name you could use_ ```cp FILLIN/emboss_cerevisiae.slurm new_name.slurm``
-_You could also copy the file to a different directory such as_ ```cp /projects/class/binf3101_001/emboss_cerevisiae.slurm ~/lab2/.```
+**_TIP_** _The_ ```.``` _in the above command means "here". It will copy the file to the current directory without changing the name of the file. If you wanted to give the file a new name you could use_ ```cp FILLIN/emboss_candida_albicans.slurm NEWNAME.slurm```
+_You could also copy the file to a different directory such as_ ```cp /projects/class/binf3101_001/emboss_candida_albicans.slurm ~/lab2/.```
 
 ### Step 8b - View the slurm script
 
@@ -491,7 +498,7 @@ nano is a built-in editor that allows you to edit files in the command line.
 
 To edit our file in nano type
 
-```nano emboss_cerevisiae.slurm```
+```nano emboss_candida_albicans.slurm```
 
 This will open an editor that looks like this
 
@@ -514,7 +521,7 @@ vi or vim is another way to edit files in the command line.
 
 To edit our file in vi use
 
-```vi emboss_cerevisiae.slurm```
+```vi emboss_candida_albicans.slurm```
 
 This will open an editor that looks like this:
 
@@ -527,7 +534,7 @@ Once there delete INPUT and replace it with our input file. Then navigate to OUT
 
 To save (write) your file you need to type ```:```. This will open a bar at the bottom where you can enter commands 
 
-Type ```w``` and then hit return/enter and you will then see ```"emboss_cerevisiae.slurm" 26L, 764C written```
+Type ```w``` and then hit return/enter and you will then see ```"emboss_candida_albicans.slurm" 26L, 764C written```
 
 To quit type ```:q``` and enter
 
@@ -541,7 +548,7 @@ To send your slurm script to the scheduler type
 **_TIP_** _Your slurm script will execute all the commands as though it is in the directory where you have the slurm script. If the script needs to access files in another directory you will need to specify the directory_
 
 ```bash
-sbatch emboss_cerevisiae.slurm
+sbatch emboss_candida_albicans.slurm
 ```
 
 You can see the jobs you have running using the command ```squeue -u username```
@@ -568,7 +575,7 @@ You should see protein sequences in fasta format with a header like this:
 Use commands such as ```grep``` to answer the questions below. Remember, you can look at the options for grep using ```grep --help```
 
 # LQ 4
-How many ORFs were annotated in the _Saccharomyces cerevisiae_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _S. cerevisiae_
+How many ORFs were annotated in the _Saccharomyces candida_albicans_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _S. candida_albicans_
 
 &nbsp;
 # Step 12 - Extract data for one genomic contig
