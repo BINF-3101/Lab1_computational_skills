@@ -473,6 +473,8 @@ As you can see there are place-holder files INPUT and OUTPUT that we will need t
 
 Where you see the capital letters, you must put in the input file and specify a name for the output file 
 
+_click on image to enlarge_
+
 <img src="https://github.com/user-attachments/assets/60986a7d-f95e-4271-b7c1-54689dcbf262" width="400">
 
 There are many ways we can edit a file on the cluster. The most common ways are 
@@ -499,7 +501,7 @@ To edit our file in nano type
 
 This will open an editor that looks like this
 
-<img src="https://github.com/BINF-3101/Lab1_computational_skills/assets/47755288/a89c7a25-a44a-412f-9e27-e3872ebb8c8b" width="400">
+<img src="https://github.com/user-attachments/assets/832ed857-6396-427c-bc0b-edbdc865186d" width="500">
 
 You can then navigate to the INPUT using the arrow keys 
 
@@ -522,7 +524,7 @@ To edit our file in vi use
 
 This will open an editor that looks like this:
 
-<img src="https://github.com/BINF-3101/Lab1_computational_skills/assets/47755288/14453051-5cb8-4f9e-987c-1b5d4b1e4aa0" width="400">
+<img src="https://github.com/user-attachments/assets/85c8605d-fa56-43ca-9872-0b53afdc4d81" width="400">
 
 Use the arrow keys to navigate to where you want to edit. 
 To enter editing mode you must press the [i] key (you will see -- INSERT -- show up along the bottom)
