@@ -117,7 +117,7 @@ You will enter ```hpc-student.uncc.edu``` into the Host Name
 Make sure the ```Port``` is set to 22
 Select ```SSH``` as the connection type
 
-<img src="https://github.com/BINF-3101/Lab1_computational_skills/assets/47755288/f3cb7891-c538-44cd-90ce-709f9cbd8e1d" width="400">
+<img src="https://github.com/user-attachments/assets/a767d7f2-fa1b-4805-9b09-19db7d4a7b74" width="400">
 
 &nbsp;
 ### Windows Step 1c - Log into the cluster
@@ -145,6 +145,14 @@ You are currently in your home directory. You can return to this directory at an
 To see where you are in the cluster at any time use the command ```pwd``` which stands for Print Working Directory
 
 The cluster has folders and files just like your local computer. 
+
+```bash
+#change directory
+cd
+#present working directory
+pwd
+```
+
 &nbsp;
 ### Step 2a - Make a Folder
 
