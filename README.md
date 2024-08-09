@@ -561,25 +561,28 @@ Once the job is done running, you will see your output file appear in your direc
 
 First, take a look at the file using ```less``` or ```head```. 
 
-You should see protein sequences in fasta format with a header like this:
+You should see protein sequences in fasta format with a header like this (this is not the actual first sequence_
 
-```>NC_001141_3935 [328076 - 327954] (REVERSE SENSE) ```
+```
+>Ca22chr1A_C_albicans_SC5314_20665 [3187944 - 3187810] (REVERSE SENSE) (3188363 nucleotides)
+MRVLITIMACHXQRRNTHLRKKLTKKLLVLNIHLIQLIQEKQSEC
+ ```
 
-```NC_001141_3935``` - This is the sequence identifier. The first part ```NC_001141``` is the genome sequence in which the open reading frame was found. ```3935``` is the identifier for this coding sequence. It's the 3,935th coding sequence identified on this contig (genome sequence). 
+```Ca22chr1A_C_albicans_SC5314_20665``` - This is the sequence identifier. The first part ```NC_001141``` is the genome sequence in which the open reading frame was found. ```3935``` is the identifier for this coding sequence. It's the 3,935th coding sequence identified on this contig (genome sequence). 
 
-```[328076 - 327954]``` - Is the position along the contig (genome sequence) where the ORF was found. 
+```[3187944 - 3187810]``` - Is the position along the contig (genome sequence) where the ORF was found. 
 
 ```(REVERSE SENSE)``` - This identifier is only present in ORF frames that were found when reading in reverse-complement (complimentary sequence going from right-to-left) along the DNA sequence. 
 
 Use commands such as ```grep``` to answer the questions below. Remember, you can look at the options for grep using ```grep --help```
 
 # LQ 4
-How many ORFs were annotated in the _Saccharomyces candida_albicans_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _S. candida_albicans_
+How many ORFs were annotated in the _Candida albicans_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _Candida albicans_
 
 &nbsp;
 # Step 12 - Extract data for one genomic contig
 
-We are particularly interested in the contig **NC_001138** 
+We are particularly interested in the contig **Ca22chrM_C_albicans_SC5314** 
 
 Let's extract all the ORFs belonging to this contig. There are ways using biopython, bioperl or other programs to load in and analyze a fasta file. We will, however, do this manually using bash. 
 
@@ -588,80 +591,74 @@ Let's extract all the ORFs belonging to this contig. There are ways using biopyt
 If we look into our fasta file we will see a snippet like this:
 
 ```bash
->NC_001133_345 [51419 - 51538]
-FRKTIIGRCSWSELGLQQWFTSGSFGGWWFKRANANSRDE
->NC_001133_346 [48561 - 51704]
-VMVENSTQKAPHAGNDDNSSTKPYSEAFFLGFNNPTPGLEAEHSSTSPAPENSETHNRKR
-NRILFVCQACRKSKTKCDREKPECGRCVKHGLKCVYDVSKQPAPRIPSKDAIISRLEKDM
-FYWKDKAMKLLTEREVNESGKRSASPINTNNASGDSPDTKKQHKMEPIYEQSGNGDINNG
-TRNDIEINLYRSHPTMIMSKVMKREVKPLSENYIIIQDCFLKILVTSVFLDTSKNTMIPA
-LTANANITRAQPSVANNLLKLKEMLIRQCQTEDEKNRVNEFTDRILQNTNSNRNLKIGML
-LSMLYNSVGYQYLEDHCPQGGEYSDLLRNLINECEAILPSYEIIERYKNHFYEYVYPSLP
-FIELEIFEESLSQTIFPDPNNPSKVQIRMGSTHLRAKVENLSLLLVILKLSYMSIRFLDH
-STADSSFYLSKEIIDKYPIPNDFILLSQRCLASENWCACANENIISCLLYIWSFFAFSPE
-EGDFFLEHPTDVISSLIMMLSTSIGLHRDPSDFPQLISPSTSDKRTLNHRRILWLSIVTV
-CSFEASLKGRHSVSPISLMALFLNIKDPDSLTVYMNRVRGDLSDINNHKLLRIHKFTFKR
-AQLALLLSDLDNLTMTYYGSFHLHSIEFIREKIEIFVEENFPIVPLKSVAQDKSDLDDMN
-VISEMNILSSENSSSFHNRIMNKLLMLRTSMAVFLHFETLITKDKSIFPFYKKYFMVSCM
-DALSLINYFNKFFNGEYRHAISSLTSFNVTKFIQLALSSTIFSLLGIILRIGLAIHMLSS
-EVQKLSGTTDPRIKELNTKVEKFSTLQRDLESALEGIYCSASEHLRFTYFPVFKMLALFD
-VIVQRMRKGELWHGIFTMIQMEQMHSRIIKTLSITLGVKLDKKDRLLEELMACNHVANFS
-VEDIDELNRNIKKEIQISSGLKPPVNTIDLTNGEPFGNAVPTFTKTWSSSLDNLEKLSSA
-AAVGQSLDYNSGLRQGPLAGGGSKEQTPIAGMNNLNNSINATPIVDNSSGSQLPNGFDRG
-QANNTPFPGYFGGLDLFDYDFLFGNDFA
->NC_001133_347 [51547 - 51747]
-TIQSMLHQLSITHLDHNFLMVSIEAKRIILLFQVILEVWIYLIMTFCLAMTLLKNFLSKL
-LPIHFIN
->NC_001133_348 [51751 - 51855]
-LILYSHEFMKLTDNIKCSIYIYMYITVNVRRALPS
+>Ca22chr1A_C_albicans_SC5314_27 [2243 - 2686] (3188363 nucleotides)
+HSLFALATTSKHNCIDXTLLISCCIPPVVINXPRVVLLLIVQPANTTTTALTTPSSFRVA
+IPXTTRFTFPTAIDYSNYKLFYRPFSNXQAQRDTCLGIYNSFYSSFCICHAICPPPIIQP
+ANTTATGIDNCFHCYDTTTDYMLFTQQT
+>Ca22chr1A_C_albicans_SC5314_28 [2397 - 2807] (3188363 nucleotides)
+LHPLHFVLQFPXPLGSHFPPPLTTQTTSCSIVPSPTSKHNEIHVWAFTIASTHHFASAMQ
+SAHHPSSNQQTQPQRALTTASTAMTPPLTTCCSPSKHNTLHSSSSISHSTTAISTGSPSS
+LTSVKYTTPQINYPXPA
+>Ca22chr1A_C_albicans_SC5314_29 [2770 - 2889] (3188363 nucleotides)
+NTPPHRSTIPXRLDFRKIHYKAYPLSDYPSVPQINYPXPA
+>Ca22chr1A_C_albicans_SC5314_30 [2850 - 2954] (3188363 nucleotides)
+LPLSPTDQLSPAGLTSVKXTTXSAPSTLSSSIDXQ
+>Ca22chr1A_C_albicans_SC5314_31 [2690 - 3067] (3188363 nucleotides)
+HLAQFKFNFPFYNCNFYWVPEQFDFRKIHHPTDQLSPAGLTSVKYTTKPTPCLTTPQSHR
+STIPXRLDFRKIXYXVCPFYTLLFYRFXVNIFLFYVITTTLASLSVAAISXFSPILVRLT
+SVHSPG
+>
 ```
 What we can see is that each **line is limited to 60 characters**. We want to re-format our file so it keeps the entire protein sequence on one line. 
 
 To do this we can use this command (we will dive deeper into the powerful ```awk``` command later)
 
 ```bash
-awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < INPUT_FILE.fasta > OUTPUT_FILE.fasta
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < INPUT_FILE.fasta > OUTPUT_FILE.oneline.fasta
 ```
-Replace the INPUT and OUTPUT file names and execute the command
+Replace the INPUT and OUTPUT file names with the names you used in the slurm script and execute the command
 
 Now our output file should look more like this:
 
 ```bash
->NC_001133_345 [51419 - 51538]
-FRKTIIGRCSWSELGLQQWFTSGSFGGWWFKRANANSRDE
->NC_001133_346 [48561 - 51704]
-VMVENSTQKAPHAGNDDNSSTKPYSEAFFLGFNNPTPGLEAEHSSTSPAPENSETHNRKRNRILFVCQACRKSKTKCDREKPECGRCVKHGLKCVYDVSKQPAPRIPSKDAIISRLEKDMFYWKDKAMKLLTEREVNESGKRSASPINTNNASGDSPDTKKQHKMEPIYEQSGNGDINNGTRNDIEINLYRSHPTMIMSKVMKREVKPLSENYIIIQDCFLKILVTSVFLDTSKNTMIPALTANANITRAQPSVANNLLKLKEMLIRQCQTEDEKNRVNEFTDRILQNTNSNRNLKIGMLLSMLYNSVGYQYLEDHCPQGGEYSDLLRNLINECEAILPSYEIIERYKNHFYEYVYPSLPFIELEIFEESLSQTIFPDPNNPSKVQIRMGSTHLRAKVENLSLLLVILKLSYMSIRFLDHSTADSSFYLSKEIIDKYPIPNDFILLSQRCLASENWCACANENIISCLLYIWSFFAFSPEEGDFFLEHPTDVISSLIMMLSTSIGLHRDPSDFPQLISPSTSDKRTLNHRRILWLSIVTVCSFEASLKGRHSVSPISLMALFLNIKDPDSLTVYMNRVRGDLSDINNHKLLRIHKFTFKRAQLALLLSDLDNLTMTYYGSFHLHSIEFIREKIEIFVEENFPIVPLKSVAQDKSDLDDMNVISEMNILSSENSSSFHNRIMNKLLMLRTSMAVFLHFETLITKDKSIFPFYKKYFMVSCMDALSLINYFNKFFNGEYRHAISSLTSFNVTKFIQLALSSTIFSLLGIILRIGLAIHMLSSEVQKLSGTTDPRIKELNTKVEKFSTLQRDLESALEGIYCSASEHLRFTYFPVFKMLALFDVIVQRMRKGELWHGIFTMIQMEQMHSRIIKTLSITLGVKLDKKDRLLEELMACNHVANFSVEDIDELNRNIKKEIQISSGLKPPVNTIDLTNGEPFGNAVPTFTKTWSSSLDNLEKLSSAAAVGQSLDYNSGLRQGPLAGGGSKEQTPIAGMNNLNNSINATPIVDNSSGSQLPNGFDRGQANNTPFPGYFGGLDLFDYDFLFGNDFA
->NC_001133_347 [51547 - 51747]
-TIQSMLHQLSITHLDHNFLMVSIEAKRIILLFQVILEVWIYLIMTFCLAMTLLKNFLSKLLPIHFIN
->NC_001133_348 [51751 - 51855]
-LILYSHEFMKLTDNIKCSIYIYMYITVNVRRALPS
+>Ca22chr1A_C_albicans_SC5314_27 [2243 - 2686] (3188363 nucleotides)
+HSLFALATTSKHNCIDXTLLISCCIPPVVINXPRVVLLLIVQPANTTTTALTTPSSFRVAIPXTTRFTFPTAIDYSNYKLFYRPFSNXQAQRDTCLGIYNSFYSSFCICHAICPPPIIQPANTTATGIDNCFHCYDTTTDYMLFTQQT
+>Ca22chr1A_C_albicans_SC5314_28 [2397 - 2807] (3188363 nucleotides)
+LHPLHFVLQFPXPLGSHFPPPLTTQTTSCSIVPSPTSKHNEIHVWAFTIASTHHFASAMQSAHHPSSNQQTQPQRALTTASTAMTPPLTTCCSPSKHNTLHSSSSISHSTTAISTGSPSSLTSVKYTTPQINYPXPA
+>Ca22chr1A_C_albicans_SC5314_29 [2770 - 2889] (3188363 nucleotides)
+NTPPHRSTIPXRLDFRKIHYKAYPLSDYPSVPQINYPXPA
+>Ca22chr1A_C_albicans_SC5314_30 [2850 - 2954] (3188363 nucleotides)
+LPLSPTDQLSPAGLTSVKXTTXSAPSTLSSSIDXQ
+>Ca22chr1A_C_albicans_SC5314_31 [2690 - 3067] (3188363 nucleotides)
+HLAQFKFNFPFYNCNFYWVPEQFDFRKIHHPTDQLSPAGLTSVKYTTKPTPCLTTPQSHRSTIPXRLDFRKIXYXVCPFYTLLFYRFXVNIFLFYVITTTLASLSVAAISXFSPILVRLTSVHSPG
+
 ```
 
-### Step 12b - Extracting the sequences for NC_001138
+### Step 12b - Extracting the sequences for Ca22chrM_C_albicans_SC5314
 
-Now we will extract all the sequences that contain the identifier "NC_001138" and save them to a new file
+Now we will extract all the sequences that contain the identifier "Ca22chrM_C_albicans_SC5314" and save them to a new file
 
 ```bash
-grep -A 1 "NC_001138" one_line_fasta_file.fasta > NC_001138.fasta
+grep -A 1 "Ca22chrM_C_albicans_SC5314" OUTPUT_FILE.oneline.fasta > Ca22chrM_C_albicans_SC5314.fasta
 ```
 Here is a breakdown of the command
 
 ```-A 1``` - This invokes the ``-A`` option which is also known as ``--after-context=NUM   print NUM lines of trailing context``. In this case, we want to obtain any sequence matching our search (which will be the header line starting with >) AND the sequence data saved directly after it. 
 
-``` ""NC_001138"``` - This is the pattern we are searching for
+``` ""Ca22chrM_C_albicans_SC5314"``` - This is the pattern we are searching for
 
-```one_line_fasta_file.fasta``` - This is the file we are searching in
+```OUTPUT_FILE.oneline.fasta``` - This is the file we are searching in
 
-If we were to stop the command at ```grep -A 1 "NC_001138" one_line_fasta_file.fasta``` it would print the results directly onto the terminal. We want to **direct the output to a new file**. To do this we need to use the command ```>```. 
+If we were to stop the command at ```grep -A 1 "Ca22chrM_C_albicans_SC5314" OUTPUT_FILE.oneline.fasta``` it would print the results directly onto the terminal. We want to **direct the output to a new file**. To do this we need to use the command ```>```. 
 
-```> NC_001138.fasta``` - This directs the output of the command to be saved in a new file. **_BEWARE_** This will **automatically overwrite** any file that already has our output name. If this happens **you will not be able to undo this**
+```> Ca22chrM_C_albicans_SC5314.fasta``` - This directs the output of the command to be saved in a new file. **_BEWARE_** This will **automatically overwrite** any file that already has our output name. If this happens **you will not be able to undo this**
 
 
 
 **_TIP_** _Options in programs typically have a short version that is one letter long and a long version that may be multiple characters long. For the option above for obtaining 1 line after your search, you can either use_ ```-A 1``` _or you can use the long version_ ```--after-context=1```. _Options are almost always case-sensitive. The_ ```-A``` _command means after-context while_ ```-a``` _is used while searching binary/compressed files_
 
 # LQ 5
-What percent of the ORFs annotated on the contig NC_001138 were annotated on the REVERSE strand? 
+What percent of the ORFs annotated on the contig Ca22chrM_C_albicans_SC5314 were annotated on the REVERSE strand? 
 
 
 
