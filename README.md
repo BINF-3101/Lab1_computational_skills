@@ -475,7 +475,7 @@ Where you see the capital letters, you must put in the input file and specify a 
 
 _click on image to enlarge_
 
-<img src="https://github.com/user-attachments/assets/60986a7d-f95e-4271-b7c1-54689dcbf262" width="400">
+<img src="https://github.com/user-attachments/assets/a85e8dc4-4958-4fff-8b74-8c9c63760adc" width="400">
 
 There are many ways we can edit a file on the cluster. The most common ways are 
 1. upload/download
