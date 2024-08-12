@@ -57,7 +57,7 @@ You will need your **DUO authentication method** and if you want to log in off-c
 
 **YOU  MUST HAVE THE VPN CONNECTED TO LOG IN OFF CAMPUS!!!**
 
-To set up the VPN see here: https://spaces.uncc.edu/pages/viewpage.action?pageId=6653379
+To set up the VPN see here: https://spaces.charlotte.edu/pages/viewpage.action?pageId=6653379
 
 &nbsp;
 &nbsp;
@@ -81,12 +81,12 @@ Navigate to the Utilities folder within applications and double-click on the **T
 Once the terminal is open you will log into the cluster using the command below. Your username is your email address without the @charlotte.edu portion. Type the following command then hit enter.
 
 ```bash
-ssh username@hpc-student.uncc.edu
+ssh username@hpc-student.charlotte.edu
 ```
 ex.
 
 ```bash
-ssh jdoe@hpc-student.uncc.edu
+ssh jdoe@hpc-student.charlotte.edu
 ```
 
 You will then be prompted to enter your password. Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
@@ -113,11 +113,11 @@ Go to the website and install putty
 &nbsp;
 ### Windows Step 1b - Open PuTTY & enter the information
 
-You will enter ```hpc-student.uncc.edu``` into the Host Name
+You will enter ```hpc-student.charlotte.edu``` into the Host Name
 Make sure the ```Port``` is set to 22
 Select ```SSH``` as the connection type
 
-<img src="https://github.com/user-attachments/assets/a767d7f2-fa1b-4805-9b09-19db7d4a7b74" width="400">
+<img src="https://github.com/user-attachments/assets/a9e00e0b-f4b5-49fc-a5d0-244220c3c95d" width="400">
 
 &nbsp;
 ### Windows Step 1c - Log into the cluster
@@ -227,13 +227,13 @@ Find the directory of the file you want to upload or copy the file to the curren
 
 To upload the file from the local computer to the cluster you will use the ```scp``` (secure copy) function. The general format for ```scp``` is 
 ```bash
-scp local_file_name username@hpc-student.uncc.edu:lab_1/file_name
+scp local_file_name username@hpc-student.charlotte.edu:lab_1/file_name
 ```
 
 So for me to upload our file from the computer lab computer (if the file is saved on the desktop) I would use
 
 ```bash
-scp candida_albicans.fas.tar.gz alabell3@hpc-student.uncc.edu:lab_1/candida_albicans.fas.tar.gz
+scp candida_albicans.fas.tar.gz alabell3@hpc-student.charlotte.edu:lab_1/candida_albicans.fas.tar.gz
 ```
 
 &nbsp;
@@ -252,7 +252,7 @@ This will launch a new terminal
 
 #### Win step 3 - log into the cluster
 
-To log into the cluster type ```open username@hpc-student.uncc.edu```
+To log into the cluster type ```open username@hpc-student.charlotte.edu```
 
 You will then be prompted for your password and DUO authentication. 
 
@@ -293,7 +293,7 @@ scp local_file_path destination_file_path
 example:
 
 ```bash
-scp /mnt/c/Users/locallaptopname/Downloads/candida_albicans.fas.tar.gz Username@hpc-student.uncc.edu:lab_1/candida_albicans.fas.tar.gz
+scp /mnt/c/Users/locallaptopname/Downloads/candida_albicans.fas.tar.gz Username@hpc-student.charlotte.edu:lab_1/candida_albicans.fas.tar.gz
 ```
 
 If you get this error: ```ssh: Could not resolve hostname C: Temporary failure in name resolution``` you will need to follow these instructions:
@@ -668,7 +668,7 @@ I will place the commands that we use in the lab here for future reference. Comm
 
 ##### Log into Cluster on mac
 ```bash
-ssh -l [username] hpc-student.uncc.edu
+ssh -l [username] hpc-student.charlotte.edu
 ```
 &nbsp;
 ##### Make a directory
@@ -683,7 +683,7 @@ cd [destination_directory]
 &nbsp;
 ##### Upload a file on MAC
 ```bash
-scp [local_file_name] [user]@ hpc-student.uncc.edu:[directory/in/cluster]
+scp [local_file_name] [user]@ hpc-student.charlotte.edu:[directory/in/cluster]
 ```
 &nbsp;
 ##### Upload a file using PSFTP.exe on Windows
