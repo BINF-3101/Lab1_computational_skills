@@ -57,13 +57,12 @@ You will need your **DUO authentication method** and if you want to log in off-c
 
 **YOU  MUST HAVE THE VPN CONNECTED TO LOG IN OFF CAMPUS!!!**
 
-To set up the VPN see here: https://spaces.charlotte.edu/pages/viewpage.action?pageId=6653379
+To set up the VPN see here: [https://spaces.charlotte.edu/pages/viewpage.action?pageId=6653379](https://services.help.charlotte.edu/TDClient/33/Portal/KB/ArticleDet?ID=674)
 
 &nbsp;
 &nbsp;
 # Step 1 - Log into the student research cluster
 
-If you have trouble please watch the video tutorials posted on Canvas. 
 
 &nbsp;
 ## Using the iMacs or a personal Mac computer
@@ -97,43 +96,29 @@ You will then be in the cluster! Move on to step 2
 
 &nbsp;
 &nbsp;
-## Using a Windows computer
+### Using a Windows computer
 
-Unfortunately, windows computers do not have a built-in Linux terminal to access the cluster. You will need to download one 
-&nbsp;
+Windows Step 1 - Open or install Windows PowerShell
 
-There is also an option to use **Ubuntu** on Windows - to log in use the Mac instructions above
+The PowerShell comes installed on most new Windows machines. If you do not have it installed search "PowerShell" in the Windows Store and install the App
 
-&nbsp;
-### Windows Step 1a - Obtain SSH Client
 
-There are numerous SSH clients to choose from, but I suggest using the tried and true PuTTY https://www.chiark.greenend.org.uk/~sgtatham/putty/
+<img width="780" height="747" alt="image" src="https://github.com/user-attachments/assets/b0e245a7-48be-4f80-b84a-ff1c5a3c0f0f" />
 
-Go to the website and install putty 
-&nbsp;
-### Windows Step 1b - Open PuTTY & enter the information
+### Windows Step 2 - Log into the cluster
+Once the terminal is open, you will log into the cluster using the command below. Your username is your UNC Charlotte username aka your email address without the @charlotte.edu portion
 
-You will enter ```hpc-student.charlotte.edu``` into the Host Name
-Make sure the ```Port``` is set to 22
-Select ```SSH``` as the connection type
+Type the following command and hit enter/return.
 
-<img src="https://github.com/user-attachments/assets/a9e00e0b-f4b5-49fc-a5d0-244220c3c95d" width="400">
+ssh -m hmac-sha2-512 username@hpc.charlotte.edu
 
-&nbsp;
-### Windows Step 1c - Log into the cluster
+### Windows Step 3 - Enter your password
+You will be prompted to enter your password. You will not see anything as you type!!
 
-Click **Open** and it will launch a terminal window. 
+Once your password is typed in hit enter/return.
 
-Your username is your email address without the @charlotte.edu portion. 
-
-You will be prompted to enter your username and then your password
-
-_**TIP**_ _Nothing will appear as you type your password. If you mess it up you should press delete a bunch of times to start over_
-
-Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return. 
-
-You will then be in the cluster! Move on to step 2  
-
+### Windows Step 4 - Complete two factor authentication
+Then you will be prompted to complete the DUO authentication. Enter 1, 2, or 3 for your preferred way of authenticating, and then press enter/return.
 
 &nbsp;
 &nbsp;
