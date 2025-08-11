@@ -1,5 +1,10 @@
 # Lab1_computational_skills
 
+This lab will take you through an introductory activity.
+
+You must submit your answers on the canvas page for Lab 1 Worksheet
+
+
 # OUTLINE
 
 [Introduction](#introduction)
@@ -198,7 +203,7 @@ You will copy the file from the shared class directory to this folder.
 We will use `.` to indicate "here" 
 
 ```bash
-cp /REPLACE/candida_auris.fasta.gz .
+cp /REPLACE/candida_auris.fas.gz .
 
 ```
 
@@ -212,7 +217,7 @@ If you were to use the command ```cat``` or ```head``` to look at our file right
 
 To uncompress our file use the command
 ```bash
-gunzip candida_auris.fasta.gz
+gunzip candida_auris.fas.gz
 ```
 
 **_HINT_** You can see the options for any command by typing the command and following that with ```--help``` or sometimes ```-h```. For example ```gunzip --help``` will provide you with a detailed set of options for the command
@@ -305,6 +310,7 @@ To run geecee on our sequences use the command below where we provide an informa
 geecee -sequence candida_auris.fas -outfile candida_auris.geecee.out
 ```
 
+Look at the output file to find the GC content of the genome. 
 
 # LQ 3
 What is the maximum GC content observed in our yeast genome sequences?
@@ -338,7 +344,7 @@ View the slurm script using either ```cat``` or ```less```
 
 ```#! /bin/bash``` - This line tells the program reading the file that the language is bash
 
-Anything starting with #SBATCH will not be executed as part of the code. It is special instructions for the scheduler
+Anything starting with #SBATCH will not be executed as part of the code. It is a special instruction for the scheduler.
 
 ```#SBATCH --partition=Orion``` - This tells the scheduler what part of the 
 
@@ -431,6 +437,7 @@ To quit type ```:q``` and enter
 Check your edits using ```cat``
 
 &nbsp;
+
 # Step 10 - Run the slurm script!
 
 To send your slurm script to the scheduler type
@@ -455,25 +462,25 @@ First, take a look at the file using ```less``` or ```head```.
 You should see protein sequences in fasta format with a header like this (this is not the actual first sequence_
 
 ```
->Ca22chr1A_C_albicans_SC5314_20665 [3187944 - 3187810] (REVERSE SENSE) (3188363 nucleotides)
-MRVLITIMACHXQRRNTHLRKKLTKKLLVLNIHLIQLIQEKQSEC
+>CM076438.1_183 [24450 - 24773] (REVERSE SENSE) [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+WVLLNSKSIQLAKVINVNSSVSSAWMPRPLNFSLICLIKKHTNNVGLSSVYEAWTNDNTI
  ```
 
-```Ca22chr1A_C_albicans_SC5314_20665``` - This is the sequence identifier. The first part ```NC_001141``` is the genome sequence in which the open reading frame was found. ```3935``` is the identifier for this coding sequence. It's the 3,935th coding sequence identified on this contig (genome sequence). 
+```CM076438.1_183``` - This is the sequence identifier. The first part ```CM076438.1``` is the genome sequence in which the open reading frame was found. ```138``` is the identifier for this coding sequence. It's the 138th coding sequence identified on this contig (genome sequence). 
 
-```[3187944 - 3187810]``` - Is the position along the contig (genome sequence) where the ORF was found. 
+```[24450 - 24773]``` - Is the position along the contig (genome sequence) where the ORF was found. 
 
-```(REVERSE SENSE)``` - This identifier is only present in ORF frames that were found when reading in reverse-complement (complimentary sequence going from right-to-left) along the DNA sequence. 
+```(REVERSE SENSE)``` - This identifier is only present in ORF frames that were found when reading in reverse-complement (complementary sequence going from right-to-left) along the DNA sequence. 
 
 Use commands such as ```grep``` to answer the questions below. Remember, you can look at the options for grep using ```grep --help```
 
 # LQ 4
-How many ORFs were annotated in the _Candida albicans_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _Candida albicans_
+How many ORFs were annotated in the _Candida albicans_ genome? Is this more or less than the number of genes you would expect in this genome? (Use google to find the number of genes in _Candida auris_)
 
 &nbsp;
 # Step 12 - Extract data for one genomic contig
 
-We are particularly interested in the contig **Ca22chrM_C_albicans_SC5314** 
+We are particularly interested in the contig **CM076444.1** which is also Chromosome 7
 
 Let's extract all the ORFs belonging to this contig. There are ways using biopython, bioperl or other programs to load in and analyze a fasta file. We will, however, do this manually using bash. 
 
@@ -482,25 +489,18 @@ Let's extract all the ORFs belonging to this contig. There are ways using biopyt
 If we look into our fasta file we will see a snippet like this:
 
 ```bash
->Ca22chr1A_C_albicans_SC5314_27 [2243 - 2686] (3188363 nucleotides)
-HSLFALATTSKHNCIDXTLLISCCIPPVVINXPRVVLLLIVQPANTTTTALTTPSSFRVA
-IPXTTRFTFPTAIDYSNYKLFYRPFSNXQAQRDTCLGIYNSFYSSFCICHAICPPPIIQP
-ANTTATGIDNCFHCYDTTTDYMLFTQQT
->Ca22chr1A_C_albicans_SC5314_28 [2397 - 2807] (3188363 nucleotides)
-LHPLHFVLQFPXPLGSHFPPPLTTQTTSCSIVPSPTSKHNEIHVWAFTIASTHHFASAMQ
-SAHHPSSNQQTQPQRALTTASTAMTPPLTTCCSPSKHNTLHSSSSISHSTTAISTGSPSS
-LTSVKYTTPQINYPXPA
->Ca22chr1A_C_albicans_SC5314_29 [2770 - 2889] (3188363 nucleotides)
-NTPPHRSTIPXRLDFRKIHYKAYPLSDYPSVPQINYPXPA
->Ca22chr1A_C_albicans_SC5314_30 [2850 - 2954] (3188363 nucleotides)
-LPLSPTDQLSPAGLTSVKXTTXSAPSTLSSSIDXQ
->Ca22chr1A_C_albicans_SC5314_31 [2690 - 3067] (3188363 nucleotides)
-HLAQFKFNFPFYNCNFYWVPEQFDFRKIHHPTDQLSPAGLTSVKYTTKPTPCLTTPQSHR
-STIPXRLDFRKIXYXVCPFYTLLFYRFXVNIFLFYVITTTLASLSVAAISXFSPILVRLT
-SVHSPG
+>CM076438.1_184 [24836 - 24985] [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+SGLVEQIPRDSLPPRPREKLSRPICHLQQGHSRALPSHPSRTPYPICWRL
+>CM076438.1_185 [24772 - 25047] [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+TNFAAVGCLLASSALVTSLELIWPSGADPPRQSTTTSTRETFSTHLSSATGSLSSTSISS
+FSNSLPHLLASLVWARTECPARTKAFATLLPM
+>CM076438.1_186 [24846 - 25067] [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+WSRSPETVYHHVHERNFLDPFVICNRVTLEHFHLILLELLTPFAGVSSLGKNRMSSPNQS
+ICNTIANVTTCSKD
+
 >
 ```
-What we can see is that each **line is limited to 60 characters**. We want to re-format our file so it keeps the entire protein sequence on one line. 
+What we can see is that each **line is limited to 60 characters**. We want to reformat our file so it keeps the entire protein sequence on one line. 
 
 To do this we can use this command (we will dive deeper into the powerful ```awk``` command later)
 
@@ -512,46 +512,42 @@ Replace the INPUT and OUTPUT file names with the names you used in the slurm scr
 Now our output file should look more like this:
 
 ```bash
->Ca22chr1A_C_albicans_SC5314_27 [2243 - 2686] (3188363 nucleotides)
-HSLFALATTSKHNCIDXTLLISCCIPPVVINXPRVVLLLIVQPANTTTTALTTPSSFRVAIPXTTRFTFPTAIDYSNYKLFYRPFSNXQAQRDTCLGIYNSFYSSFCICHAICPPPIIQPANTTATGIDNCFHCYDTTTDYMLFTQQT
->Ca22chr1A_C_albicans_SC5314_28 [2397 - 2807] (3188363 nucleotides)
-LHPLHFVLQFPXPLGSHFPPPLTTQTTSCSIVPSPTSKHNEIHVWAFTIASTHHFASAMQSAHHPSSNQQTQPQRALTTASTAMTPPLTTCCSPSKHNTLHSSSSISHSTTAISTGSPSSLTSVKYTTPQINYPXPA
->Ca22chr1A_C_albicans_SC5314_29 [2770 - 2889] (3188363 nucleotides)
-NTPPHRSTIPXRLDFRKIHYKAYPLSDYPSVPQINYPXPA
->Ca22chr1A_C_albicans_SC5314_30 [2850 - 2954] (3188363 nucleotides)
-LPLSPTDQLSPAGLTSVKXTTXSAPSTLSSSIDXQ
->Ca22chr1A_C_albicans_SC5314_31 [2690 - 3067] (3188363 nucleotides)
-HLAQFKFNFPFYNCNFYWVPEQFDFRKIHHPTDQLSPAGLTSVKYTTKPTPCLTTPQSHRSTIPXRLDFRKIXYXVCPFYTLLFYRFXVNIFLFYVITTTLASLSVAAISXFSPILVRLTSVHSPG
-
+>CM076438.1_184 [24836 - 24985] [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+SGLVEQIPRDSLPPRPREKLSRPICHLQQGHSRALPSHPSRTPYPICWRL
+>CM076438.1_185 [24772 - 25047] [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+TNFAAVGCLLASSALVTSLELIWPSGADPPRQSTTTSTRETFSTHLSSATGSLSSTSISSFSNSLPHLLASLVWARTECPARTKAFATLLPM
+>CM076438.1_186 [24846 - 25067] [Candida] auris strain B8441 chromosome 1, whole genome shotgun sequence
+WSRSPETVYHHVHERNFLDPFVICNRVTLEHFHLILLELLTPFAGVSSLGKNRMSSPNQSICNTIANVTTCSKD
 ```
 
-### Step 12b - Extracting the sequences for Ca22chrM_C_albicans_SC5314
+### Step 12b - Extracting the sequences for CM076444.1 or "chromosome 7"
 
-Now we will extract all the sequences that contain the identifier "Ca22chrM_C_albicans_SC5314" and save them to a new file
+Now we will extract all the sequences that contain the identifier "CM076444.1" and save them to a new file
 
 ```bash
-grep -A 1 "Ca22chrM_C_albicans_SC5314" OUTPUT_FILE.oneline.fasta > Ca22chrM_C_albicans_SC5314.fasta
+grep -A 1 "CM076444.1" OUTPUT_FILE.oneline.fasta > CM076444.1.fasta
 ```
 Here is a breakdown of the command
 
 ```-A 1``` - This invokes the ``-A`` option which is also known as ``--after-context=NUM   print NUM lines of trailing context``. In this case, we want to obtain any sequence matching our search (which will be the header line starting with >) AND the sequence data saved directly after it. 
 
-``` ""Ca22chrM_C_albicans_SC5314"``` - This is the pattern we are searching for
+``` ""CM076444.1"``` - This is the pattern we are searching for
 
 ```OUTPUT_FILE.oneline.fasta``` - This is the file we are searching in
 
-If we were to stop the command at ```grep -A 1 "Ca22chrM_C_albicans_SC5314" OUTPUT_FILE.oneline.fasta``` it would print the results directly onto the terminal. We want to **direct the output to a new file**. To do this we need to use the command ```>```. 
+If we were to stop the command at ```grep -A 1 "CM076444.1" OUTPUT_FILE.oneline.fasta``` it would print the results directly onto the terminal. We want to **direct the output to a new file**. To do this we need to use the command ```>```. 
 
-```> Ca22chrM_C_albicans_SC5314.fasta``` - This directs the output of the command to be saved in a new file. **_BEWARE_** This will **automatically overwrite** any file that already has our output name. If this happens **you will not be able to undo this**
+```> CM076444.1``` - This directs the output of the command to be saved in a new file. **_BEWARE_** This will **automatically overwrite** any file that already has our output name. If this happens **you will not be able to undo this**
 
 
 
 **_TIP_** _Options in programs typically have a short version that is one letter long and a long version that may be multiple characters long. For the option above for obtaining 1 line after your search, you can either use_ ```-A 1``` _or you can use the long version_ ```--after-context=1```. _Options are almost always case-sensitive. The_ ```-A``` _command means after-context while_ ```-a``` _is used while searching binary/compressed files_
 
 # LQ 5
-What percent of the ORFs annotated on the contig Ca22chrM_C_albicans_SC5314 were annotated on the REVERSE strand? 
+What percent of the ORFs annotated on the contig `CM076444.1` which is also "chromosome 7"  were annotated on the REVERSE strand? 
 
-
+# BONUS QUESTION
+Report one fact about the yeast _Candida auris_
 
 # Command Glossary   
 
