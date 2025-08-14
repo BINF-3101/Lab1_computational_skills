@@ -203,7 +203,7 @@ You will copy the file from the shared class directory to this folder.
 We will use `.` to indicate "here" 
 
 ```bash
-cp /REPLACE/candida_auris.fas.gz .
+cp /projects/class/binf3101_001/lab_1/candida_auris.fas.gz .
 
 ```
 
