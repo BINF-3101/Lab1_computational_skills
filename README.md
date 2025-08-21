@@ -105,6 +105,10 @@ You will then be in the cluster! Move on to step 2
 
 Windows Step 1 - Open or install Windows PowerShell
 
+**IMPORTANT NOTE**
+If the login for windows powershell fails after only 1 attempt at providing your password - please download a different shell version from the windows store called PUTTY
+
+
 The PowerShell comes installed on most new Windows machines. If you do not have it installed search "PowerShell" in the Windows Store and install the App
 
 
